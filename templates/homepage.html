@@ -1,0 +1,24 @@
+<h1><center>Digital Ramanujan</center></h1>
+
+<p><center>The main objective of this proposal is to extract the mathematical expression from the image using a pre-trained model for optical character recognition already existing as an API service in Google Cloud Platform i.e. Cloud Vision API, its output will then be used to solve the expression by converting extracted string into numbers, operators and then evaluating the expression to get the result.</center></p>
+
+<br>
+
+<html>
+  <body>
+    <form action="upload_photo" method="POST" enctype="multipart/form-data">
+      Upload File: <input type="file" name="file"><br>
+      <input type="submit" name="submit" value="Submit">
+    </form>
+    {% for image_entity in image_entities %}
+      <img src="{{image_entity['image_public_url']}}" width=200 height=200>
+      <p>Result of the Expression: {{image_entity['answer']}}</p>
+    {% endfor %}
+  </body>
+  <br>
+  <br>
+  <h4>Team Members</h4>
+  <p>Panda Sai Sankara Kesava Nath</p>
+  <p>Ravi Teja</p>
+  <p>Mohith</p>
+</html>
